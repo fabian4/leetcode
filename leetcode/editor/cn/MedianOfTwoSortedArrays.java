@@ -63,9 +63,9 @@ package leetcode.editor.cn;
 
 //寻找两个正序数组的中位数
 
-public class P4_MedianOfTwoSortedArrays{
+public class MedianOfTwoSortedArrays {
 	 public static void main(String[] args) {
-	 	 Solution solution = new P4_MedianOfTwoSortedArrays().new Solution();
+	 	 Solution solution = new MedianOfTwoSortedArrays().new Solution();
 	 }
 	//leetcode submit region begin(Prohibit modification and deletion)
 	class Solution {

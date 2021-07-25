@@ -63,6 +63,8 @@ package leetcode.editor.cn;
 
 //寻找两个正序数组的中位数
 
+import java.util.Arrays;
+
 /**
  * @author fabian
  * @date 2021-07-25 19:06:43
@@ -76,7 +78,18 @@ public class P4_MedianOfTwoSortedArrays {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-            return 0;
+            double mid1, mid2;
+            if (nums1.length == 0) {
+                mid1 = 0;
+            } else {
+                mid1 = nums1.length % 2 == 0 ? (nums1[nums1.length / 2 - 1] + nums1[nums1.length / 2]) / 2.0 : nums1[nums1.length / 2];
+            }
+            if (nums2.length == 0) {
+                mid2 = 0;
+            } else {
+                mid2 = nums2.length % 2 == 0 ? (nums2[nums2.length / 2 - 1] + nums2[nums2.length / 2]) / 2.0 : nums2[nums2.length / 2];
+            }
+            return (mid1 + mid2) / 2.0;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

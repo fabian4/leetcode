@@ -59,24 +59,24 @@ import java.util.HashSet;
 public class P3_LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
         Solution solution = new P3_LongestSubstringWithoutRepeatingCharacters().new Solution();
-	}
+    }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int lengthOfLongestSubstring(String s) {
-			HashSet<Character> hashSet = new HashSet<>(s.length());
-			int maxLength = 0;
-			int r = -1;
-			for (int i = 0; i < s.length(); i++) {
-				while(r+1<s.length() && hashSet.add(s.charAt(r+1))){
-					r++;
-				}
-				maxLength = Math.max(maxLength, hashSet.size());
-				hashSet.remove(s.charAt(i));
-			}
-			return maxLength;
+            HashSet<Character> hashSet = new HashSet<>(s.length());
+            int maxLength = 0;
+            int r = -1;
+            for (int i = 0; i < s.length(); i++) {
+                while (r + 1 < s.length() && hashSet.add(s.charAt(r + 1))) {
+                    r++;
+                }
+                maxLength = Math.max(maxLength, hashSet.size());
+                hashSet.remove(s.charAt(i));
+            }
+            return maxLength;
         }
     }
-	//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

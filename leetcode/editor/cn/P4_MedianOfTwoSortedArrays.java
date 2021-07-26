@@ -72,39 +72,30 @@ import java.util.Arrays;
 public class P4_MedianOfTwoSortedArrays {
     public static void main(String[] args) {
         Solution solution = new P4_MedianOfTwoSortedArrays().new Solution();
-        System.out.println(solution.findMedianSortedArrays(new int[0], new int[]{1}));
+
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-            int n1 = nums1.length;
-            int n2 = nums2.length;
-            if (n1>n2) {
-                return findMedianSortedArrays(nums2, nums1);
-            }
-            int k = (n1 + n2 + 1)/2;
-            int left = 0;
-            int right = n1;
-            while(left < right){
-                int m1 = left +(right - left)/2;
-                int m2 = k - m1;
-                if (nums1[m1] < nums2[m2-1]) {
-                    left = m1 + 1;
+            int m = nums1.length;
+            int n = nums2.length;
+            int len = m + n;
+            int left = -1, right = -1;
+            int aStart = 0, bStart = 0;
+            for (int i = 0; i <= len / 2; i++) {
+                left = right;
+                if (aStart < m && (bStart >= n || nums1[aStart] < nums2[bStart])) {
+                    right = nums1[aStart++];
                 } else {
-                    right = m1;
+                    right = nums2[bStart++];
                 }
             }
-            int m1 = left;
-            int m2 = k - left;
-            int c1 = Math.max(m1 <= 0 ? Integer.MIN_VALUE : nums1[m1-1],
-                    m2 <= 0 ? Integer.MIN_VALUE : nums2[m2-1]);
-            if ((n1 + n2) % 2 == 1) {
-                return c1;
+            if ((len & 1) == 0) {
+                return (left + right) / 2.0;
+            } else {
+                return right;
             }
-            int c2 = Math.min( m1 >= n1 ? Integer.MAX_VALUE :nums1[m1],
-                    m2 >= n2 ? Integer.MAX_VALUE : nums2[m2]);
-            return (c1 + c2) * 0.5;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

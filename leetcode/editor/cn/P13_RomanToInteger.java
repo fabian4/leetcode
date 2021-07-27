@@ -85,41 +85,42 @@ import java.util.HashMap;
  * @author fabian
  * @date 2021-07-27 17:45:57
  */
-public class P13_RomanToInteger{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P13_RomanToInteger().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
-		public int romanToInt(String s) {
-			HashMap<Character, Integer> hashMap = new HashMap<>(7){{
-				put('I', 1);
-				put('V', 5);
-				put('X', 10);
-				put('L', 50);
-				put('C', 100);
-				put('D', 500);
-				put('M', 1000);
-			}};
-			int ans = 0;
-			for (int i = s.length() - 1; i >= 0; i--) {
-				int temp = hashMap.get(s.charAt(i));
-				if(i==0){
-					ans += temp;
-				}else {
-					int pre = hashMap.get(s.charAt(i-1));
-					if(temp > pre){
-						ans += temp-pre;
-						i--;
-					}else {
-						ans += temp;
-					}
-				}
-			}
-			return ans;
-		}
-	}
-	//leetcode submit region end(Prohibit modification and deletion)
+public class P13_RomanToInteger {
+    public static void main(String[] args) {
+        Solution solution = new P13_RomanToInteger().new Solution();
+
+    }
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int romanToInt(String s) {
+            HashMap<Character, Integer> hashMap = new HashMap<>(7) {{
+                put('I', 1);
+                put('V', 5);
+                put('X', 10);
+                put('L', 50);
+                put('C', 100);
+                put('D', 500);
+                put('M', 1000);
+            }};
+            int ans = 0;
+            for (int i = s.length() - 1; i >= 0; i--) {
+                int temp = hashMap.get(s.charAt(i));
+                if (i == 0) {
+                    ans += temp;
+                } else {
+                    int pre = hashMap.get(s.charAt(i - 1));
+                    if (temp > pre) {
+                        ans += temp - pre;
+                        i--;
+                    } else {
+                        ans += temp;
+                    }
+                }
+            }
+            return ans;
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

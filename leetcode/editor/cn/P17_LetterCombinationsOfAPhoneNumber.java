@@ -43,23 +43,57 @@ package leetcode.editor.cn;
 
 //电话号码的字母组合
 
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author fabian
  * @date 2021-07-28 13:56:28
  */
-public class P17_LetterCombinationsOfAPhoneNumber{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P17_LetterCombinationsOfAPhoneNumber().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
-		public List<String> letterCombinations(String digits) {
+public class P17_LetterCombinationsOfAPhoneNumber {
+    public static void main(String[] args) {
+        Solution solution = new P17_LetterCombinationsOfAPhoneNumber().new Solution();
+        solution.letterCombinations("23");
+    }
 
-		}
-	}
-	//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        Map<Character, String> phoneMap = new HashMap<Character, String>() {{
+            put('2', "abc");
+            put('3', "def");
+            put('4', "ghi");
+            put('5', "jkl");
+            put('6', "mno");
+            put('7', "pqrs");
+            put('8', "tuv");
+            put('9', "wxyz");
+        }};
+
+        List<String> list = new LinkedList<>();
+
+        public List<String> letterCombinations(String digits) {
+            if ("".equals(digits)) {
+                return list;
+            }
+            int length = list.size();
+            if(length==0){
+                for (int i = 0; i < phoneMap.get(digits.charAt(0)).length(); i++) {
+                    list.add(phoneMap.get(digits.charAt(0)).charAt(i)+"");
+                }
+                return letterCombinations(digits.substring(1));
+            }
+            for (int i = 0; i < length; i++) {
+                String s = list.remove(0);
+                String target = phoneMap.get(digits.charAt(0));
+                for (int j = 0; j < target.length(); j++) {
+                    list.add(s+target.charAt(j));
+                }
+            }
+            return letterCombinations(digits.substring(1));
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

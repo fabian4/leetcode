@@ -66,26 +66,26 @@ package leetcode.editor.cn;
 public class P26_RemoveDuplicatesFromSortedArray {
     public static void main(String[] args) {
         Solution solution = new P26_RemoveDuplicatesFromSortedArray().new Solution();
-        solution.removeDuplicates(new int[]{-50,-49,-48,-46,-46,-44,-44,-44,-44,-43,-43,-43,-42,-42,-41,-40,-39,-39,-38,-38,-37,-35,-34,-33,-31,-31,-30,-30,-28,-28,-27,-25,-22,-22,-22,-22,-22,-21,-21,-21,-21,-19,-18,-17,-17,-16,-16,-15,-15,-14,-13,-13,-10,-10,-9,-9,-8,-7,-7,-7,-7,-6,-5,-4,-4,-4,-4,-3,-3,-2,-2,-2,0,0,1,2,2,2,3,3,4,5,5,5,7,8,8,8,10,10,14,15,16,16,18,18,19,21,23,23,24,24,24,25,25,25,26,27,28,28,30,32,32,32,34,36,37,37,37,38,38,38,39,40,40,40,41,41,43,43,43,44,45,46,46,47,48,48,50,50,50});
+        solution.removeDuplicates(new int[]{-50, -49, -48, -46, -46, -44, -44, -44, -44, -43, -43, -43, -42, -42, -41, -40, -39, -39, -38, -38, -37, -35, -34, -33, -31, -31, -30, -30, -28, -28, -27, -25, -22, -22, -22, -22, -22, -21, -21, -21, -21, -19, -18, -17, -17, -16, -16, -15, -15, -14, -13, -13, -10, -10, -9, -9, -8, -7, -7, -7, -7, -6, -5, -4, -4, -4, -4, -3, -3, -2, -2, -2, 0, 0, 1, 2, 2, 2, 3, 3, 4, 5, 5, 5, 7, 8, 8, 8, 10, 10, 14, 15, 16, 16, 18, 18, 19, 21, 23, 23, 24, 24, 24, 25, 25, 25, 26, 27, 28, 28, 30, 32, 32, 32, 34, 36, 37, 37, 37, 38, 38, 38, 39, 40, 40, 40, 41, 41, 43, 43, 43, 44, 45, 46, 46, 47, 48, 48, 50, 50, 50});
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int removeDuplicates(int[] nums) {
-            if(nums.length<2){
+            if (nums.length < 2) {
                 return nums.length;
             }
             int k;
             int j = 2;
             for (k = 1; k < nums.length; k++) {
-                if(nums[k-1] >= nums[k]){
-                    if(j<k){
+                if (nums[k - 1] >= nums[k]) {
+                    if (j < k) {
                         j = k;
                     }
-                    while (j< nums.length && nums[k-1] == nums[j]){
+                    while (j < nums.length && nums[k - 1] == nums[j]) {
                         j++;
                     }
-                    if(j == nums.length){
+                    if (j == nums.length) {
                         break;
                     }
                     nums[k] = nums[j];

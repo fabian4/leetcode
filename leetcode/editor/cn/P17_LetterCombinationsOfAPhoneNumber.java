@@ -78,9 +78,9 @@ public class P17_LetterCombinationsOfAPhoneNumber {
                 return list;
             }
             int length = list.size();
-            if(length==0){
+            if (length == 0) {
                 for (int i = 0; i < phoneMap.get(digits.charAt(0)).length(); i++) {
-                    list.add(phoneMap.get(digits.charAt(0)).charAt(i)+"");
+                    list.add(phoneMap.get(digits.charAt(0)).charAt(i) + "");
                 }
                 return letterCombinations(digits.substring(1));
             }
@@ -88,7 +88,7 @@ public class P17_LetterCombinationsOfAPhoneNumber {
                 String s = list.remove(0);
                 String target = phoneMap.get(digits.charAt(0));
                 for (int j = 0; j < target.length(); j++) {
-                    list.add(s+target.charAt(j));
+                    list.add(s + target.charAt(j));
                 }
             }
             return letterCombinations(digits.substring(1));

@@ -57,13 +57,21 @@ package leetcode.editor.cn;
 public class P28_ImplementStrstr {
     public static void main(String[] args) {
         Solution solution = new P28_ImplementStrstr().new Solution();
-
+        System.out.println(solution.strStr("abc", "c"));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int strStr(String haystack, String needle) {
-
+            if ("".equals(needle)) {
+                return 0;
+            }
+            for (int i = 0; i <= haystack.length() - needle.length(); i++) {
+                if (haystack.startsWith(needle, i)) {
+                    return i;
+                }
+            }
+            return -1;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

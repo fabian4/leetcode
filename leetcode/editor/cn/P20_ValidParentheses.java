@@ -59,6 +59,8 @@ package leetcode.editor.cn;
 
 //有效的括号
 
+import java.util.Stack;
+
 /**
  * @author fabian
  * @date 2021-07-28 16:02:32
@@ -66,13 +68,47 @@ package leetcode.editor.cn;
 public class P20_ValidParentheses {
     public static void main(String[] args) {
         Solution solution = new P20_ValidParentheses().new Solution();
-
+        solution.isValid("([)]");
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean isValid(String s) {
-
+            Stack<Character> stack = new Stack<>();
+            for (int i = 0; i < s.length(); i++) {
+                Character c = s.charAt(i);
+                switch (c) {
+                    case '(':
+                    case '{':
+                    case '[':
+                        stack.push(c);
+                        break;
+                    case ')':
+                        if (!stack.isEmpty() && stack.peek()=='(') {
+                            stack.pop();
+                        }else {
+                            return false;
+                        }
+                        break;
+                    case ']':
+                        if (!stack.isEmpty() && stack.peek()=='[') {
+                            stack.pop();
+                        }else {
+                            return false;
+                        }
+                        break;
+                    case '}':
+                        if (!stack.isEmpty() && stack.peek()=='{') {
+                            stack.pop();
+                        }else {
+                            return false;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return stack.empty();
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

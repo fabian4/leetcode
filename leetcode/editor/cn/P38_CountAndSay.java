@@ -84,21 +84,21 @@ public class P38_CountAndSay {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public String countAndSay(int n) {
-            if(n == 1){
+            if (n == 1) {
                 return "1";
             }
-            String s = countAndSay(n-1);
+            String s = countAndSay(n - 1);
             int index = 0;
             StringBuilder ans = new StringBuilder();
-            while(s.length()>0){
-                if(s.length() == index + 1){
+            while (s.length() > 0) {
+                if (s.length() == index + 1) {
                     ans.append((index + 1)).append(s.charAt(index));
                     break;
-                }else if(s.charAt(index+1) == s.charAt(index)){
+                } else if (s.charAt(index + 1) == s.charAt(index)) {
                     index++;
-                }else {
+                } else {
                     ans.append(index + 1).append(s.charAt(index));
-                    s = s.substring(index+1);
+                    s = s.substring(index + 1);
                     index = 0;
                 }
             }

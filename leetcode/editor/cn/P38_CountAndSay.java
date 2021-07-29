@@ -69,6 +69,8 @@ package leetcode.editor.cn;
 
 //外观数列
 
+import java.util.Arrays;
+
 /**
  * @author fabian
  * @date 2021-07-29 17:24:04
@@ -76,13 +78,31 @@ package leetcode.editor.cn;
 public class P38_CountAndSay {
     public static void main(String[] args) {
         Solution solution = new P38_CountAndSay().new Solution();
-
+        System.out.println(solution.countAndSay(30));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public String countAndSay(int n) {
-
+            if(n == 1){
+                return "1";
+            }
+            String s = countAndSay(n-1);
+            int index = 0;
+            StringBuilder ans = new StringBuilder();
+            while(s.length()>0){
+                if(s.length() == index + 1){
+                    ans.append((index + 1)).append(s.charAt(index));
+                    break;
+                }else if(s.charAt(index+1) == s.charAt(index)){
+                    index++;
+                }else {
+                    ans.append(index + 1).append(s.charAt(index));
+                    s = s.substring(index+1);
+                    index = 0;
+                }
+            }
+            return ans.toString();
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

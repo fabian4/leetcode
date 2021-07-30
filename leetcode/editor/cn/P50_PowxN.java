@@ -45,33 +45,34 @@ package leetcode.editor.cn;
  * @author fabian
  * @date 2021-07-30 15:32:24
  */
-public class P50_PowxN{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P50_PowxN().new Solution();
-		 System.out.println(solution.myPow(2.00000, -1));
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
-		public double myPow(double x, int n) {
-			if(x == 0.0f) {
-				return 0.0d;
-			}
-			long b = n;
-			double res = 1.0;
-			if(b < 0) {
-				x = 1 / x;
-				b = -b;
-			}
-			while(b > 0) {
-				if((b & 1) == 1) {
-					res *= x;
-				}
-				x *= x;
-				b >>= 1;
-			}
-			return res;
-		}
-	}
-	//leetcode submit region end(Prohibit modification and deletion)
+public class P50_PowxN {
+    public static void main(String[] args) {
+        Solution solution = new P50_PowxN().new Solution();
+        System.out.println(solution.myPow(2.00000, -1));
+    }
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public double myPow(double x, int n) {
+            if (x == 0.0f) {
+                return 0.0d;
+            }
+            long b = n;
+            double res = 1.0;
+            if (b < 0) {
+                x = 1 / x;
+                b = -b;
+            }
+            while (b > 0) {
+                if ((b & 1) == 1) {
+                    res *= x;
+                }
+                x *= x;
+                b >>= 1;
+            }
+            return res;
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

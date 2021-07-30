@@ -62,22 +62,23 @@ package leetcode.editor.cn;
  * @author fabian
  * @date 2021-07-30 16:04:54
  */
-public class P53_MaximumSubarray{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P53_MaximumSubarray().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
-		public int maxSubArray(int[] nums) {
-			int pre = 0, maxAns = nums[0];
-			for (int x : nums) {
-				pre = Math.max(pre + x, x);
-				maxAns = Math.max(maxAns, pre);
-			}
-			return maxAns;
-		}
-	}
-	//leetcode submit region end(Prohibit modification and deletion)
+public class P53_MaximumSubarray {
+    public static void main(String[] args) {
+        Solution solution = new P53_MaximumSubarray().new Solution();
+
+    }
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int maxSubArray(int[] nums) {
+            int pre = 0, maxAns = nums[0];
+            for (int x : nums) {
+                pre = Math.max(pre + x, x);
+                maxAns = Math.max(maxAns, pre);
+            }
+            return maxAns;
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

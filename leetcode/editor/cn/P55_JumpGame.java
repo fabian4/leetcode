@@ -53,15 +53,14 @@ public class P55_JumpGame {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean canJump(int[] nums) {
-            if (nums.length == 1) {
-                return true;
-            }
-            for (int i = nums.length - 1; i > 0; i--) {
-                if (nums[i - 1] >= nums.length - i) {
-                    if (i == 1) {
-                        return true;
-                    }
-                    return canJump(Arrays.copyOf(nums, i));
+            int max = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (i > max) {
+                    return false;
+                }
+                max = Math.max(max, i + nums[i]);
+                if (max >= nums.length - 1) {
+                    return true;
                 }
             }
             return false;

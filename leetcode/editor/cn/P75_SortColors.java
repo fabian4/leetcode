@@ -61,6 +61,8 @@ package leetcode.editor.cn;
 
 //颜色分类
 
+import java.util.Arrays;
+
 /**
  * @author fabian
  * @date 2021-07-31 11:14:21
@@ -68,14 +70,30 @@ package leetcode.editor.cn;
 public class P75_SortColors{
 	 public static void main(String[] args) {
 	 	 Solution solution = new P75_SortColors().new Solution();
-	 
+	 	 int[] nums = new int[]{1, 2, 0};
+		 solution.sortColors(nums);
+		 System.out.println(Arrays.toString(nums));
 	 }
 	//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public void sortColors(int[] nums) {
-
-    }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+	class Solution {
+		public void sortColors(int[] nums) {
+			int p = 0, q = nums.length - 1;
+			for (int i = 0; i < nums.length; i++) {
+				while (nums[i] == 2 && i < q){
+					int temp = nums[q];
+					nums[q] = nums[i];
+					nums[i] = temp;
+					q--;
+				}
+				if(nums[i] == 0 && i > p){
+					int temp = nums[p];
+					nums[p] = nums[i];
+					nums[i] = temp;
+					p++;
+				}
+			}
+		}
+	}
+	//leetcode submit region end(Prohibit modification and deletion)
 
 }

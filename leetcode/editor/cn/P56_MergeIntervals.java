@@ -35,6 +35,11 @@ package leetcode.editor.cn;
 
 //合并区间
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
 /**
  * @author fabian
  * @date 2021-07-30 18:55:57
@@ -48,7 +53,20 @@ public class P56_MergeIntervals {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[][] merge(int[][] intervals) {
-
+            if (intervals.length == 0) {
+                return new int[0][2];
+            }
+            Arrays.sort(intervals, Comparator.comparingInt(interval -> interval[0]));
+            List<int[]> merged = new ArrayList<>();
+            for (int[] interval : intervals) {
+                int l = interval[0], r = interval[1];
+                if (merged.size() == 0 || merged.get(merged.size() - 1)[1] < l) {
+                    merged.add(new int[]{l, r});
+                } else {
+                    merged.get(merged.size() - 1)[1] = Math.max(merged.get(merged.size() - 1)[1], r);
+                }
+            }
+            return merged.toArray(new int[merged.size()][]);
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

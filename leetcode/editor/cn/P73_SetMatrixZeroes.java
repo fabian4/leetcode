@@ -46,17 +46,39 @@ package leetcode.editor.cn;
  * @author fabian
  * @date 2021-07-31 11:09:37
  */
-public class P73_SetMatrixZeroes{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P73_SetMatrixZeroes().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
-		public void setZeroes(int[][] matrix) {
+public class P73_SetMatrixZeroes {
+    public static void main(String[] args) {
+        Solution solution = new P73_SetMatrixZeroes().new Solution();
 
-		}
-	}
-	//leetcode submit region end(Prohibit modification and deletion)
+    }
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public void setZeroes(int[][] matrix) {
+            int m = matrix.length, n = matrix[0].length;
+            boolean flagCol0 = false;
+            for (int i = 0; i < m; i++) {
+                if (matrix[i][0] == 0) {
+                    flagCol0 = true;
+                }
+                for (int j = 1; j < n; j++) {
+                    if (matrix[i][j] == 0) {
+                        matrix[i][0] = matrix[0][j] = 0;
+                    }
+                }
+            }
+            for (int i = m - 1; i >= 0; i--) {
+                for (int j = 1; j < n; j++) {
+                    if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+                        matrix[i][j] = 0;
+                    }
+                }
+                if (flagCol0) {
+                    matrix[i][0] = 0;
+                }
+            }
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

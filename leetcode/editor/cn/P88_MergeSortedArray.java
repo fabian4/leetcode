@@ -38,6 +38,8 @@ package leetcode.editor.cn;
 
 //合并两个有序数组
 
+import java.util.Arrays;
+
 /**
  * @author fabian
  * @date 2021-07-31 18:28:03
@@ -45,12 +47,14 @@ package leetcode.editor.cn;
 public class P88_MergeSortedArray{
 	 public static void main(String[] args) {
 	 	 Solution solution = new P88_MergeSortedArray().new Solution();
-	 
+	 	 solution.merge(new int[]{1, 2, 3, 0, 0, 0}, 3, new int[]{2, 5, 6}, 3);
 	 }
 	//leetcode submit region begin(Prohibit modification and deletion)
 	class Solution {
 		public void merge(int[] nums1, int m, int[] nums2, int n) {
-
+			while (n > 0) {
+				nums1[m + n - 1] = m < 1 || nums2[n - 1] > nums1[m - 1] ? nums2[--n] : nums1[--m];
+			}
 		}
 	}
 	//leetcode submit region end(Prohibit modification and deletion)

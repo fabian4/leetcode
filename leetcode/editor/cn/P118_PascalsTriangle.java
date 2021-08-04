@@ -49,7 +49,7 @@ public class P118_PascalsTriangle {
         for (List<Integer> list : solution.generate(1000)) {
             System.out.println(list);
         }
-        System.out.println(System.currentTimeMillis()-start + "s");
+        System.out.println(System.currentTimeMillis() - start + "s");
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -59,10 +59,10 @@ public class P118_PascalsTriangle {
             for (int i = 1; i <= numRows; i++) {
                 List<Integer> list = new ArrayList<>(i);
                 for (int j = 1; j <= i; j++) {
-                    if(j==1||j==i){
+                    if (j == 1 || j == i) {
                         list.add(1);
-                    }else {
-                        list.add(ans.get(i-2).get(j-2) + ans.get(i-2).get(j-1));
+                    } else {
+                        list.add(ans.get(i - 2).get(j - 2) + ans.get(i - 2).get(j - 1));
                     }
                 }
                 ans.add(list);

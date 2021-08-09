@@ -77,12 +77,17 @@ import leetcode.editor.cn.base.Node;
  * @author fabian
  * @date 2021-08-08 17:34:18
  */
-public class P138_CopyListWithRandomPointer{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P138_CopyListWithRandomPointer().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
+public class P138_CopyListWithRandomPointer {
+    public static void main(String[] args) {
+        Solution solution = new P138_CopyListWithRandomPointer().new Solution();
+        Node head = new Node(1);
+
+        head.next = new Node(2);
+        head.next.random = head;
+
+        solution.copyRandomList(head);
+    }
+    //leetcode submit region begin(Prohibit modification and deletion)
 	/*
 	// Definition for a Node.
 	class Node {
@@ -98,11 +103,40 @@ public class P138_CopyListWithRandomPointer{
 	}
 	*/
 
-	class Solution {
-		public Node copyRandomList(Node head) {
-
-		}
-	}
-	//leetcode submit region end(Prohibit modification and deletion)
+    class Solution {
+        public Node copyRandomList(Node head) {
+            if (head == null) {
+                return null;
+            }
+            Node p = head;
+            while (p != null) {
+                Node node = new Node(p.val);
+                node.next = p.next;
+                p.next = node;
+                p = node.next;
+            }
+            p = head;
+            while (p != null) {
+                if (p.random != null) {
+                    p.next.random = p.random.next;
+                }
+                p = p.next.next;
+            }
+            Node ans = head.next;
+            p = head;
+            Node q = ans;
+            while (q != null) {
+                p.next = q.next;
+                p = p.next;
+                if (p == null) {
+                    break;
+                }
+                q.next = p.next;
+                q = q.next;
+            }
+            return ans;
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

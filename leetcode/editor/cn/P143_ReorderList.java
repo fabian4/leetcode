@@ -74,14 +74,18 @@ public class P143_ReorderList{
 				list.add(p);
 				p = p.next;
 			}
-			int length = list.size();
-			for(int i = 0; i<length/2; i++){
-				p = list.get(i);
-				ListNode q = p.next;
-				p.next = list.get(length-i-1);
-				p.next.next = q;
+			int i = 0, j = list.size() - 1;
+			while (i < j) {
+				list.get(i).next = list.get(j);
+				i++;
+				//偶数个节点的情况，会提前相遇
+				if (i == j) {
+					break;
+				}
+				list.get(j).next = list.get(i);
+				j--;
 			}
-			p.next.next = null;
+			list.get(i).next = null;
 		}
 	}
 	//leetcode submit region end(Prohibit modification and deletion)

@@ -36,17 +36,28 @@ package leetcode.editor.cn;
  * @author fabian
  * @date 2021-08-12 21:55:33
  */
-public class P169_MajorityElement{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P169_MajorityElement().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int majorityElement(int[] nums) {
+public class P169_MajorityElement {
+    public static void main(String[] args) {
+        Solution solution = new P169_MajorityElement().new Solution();
 
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int majorityElement(int[] nums) {
+            int count = 0;
+            Integer candidate = null;
+
+            for (int num : nums) {
+                if (count == 0) {
+                    candidate = num;
+                }
+                count += (num == candidate) ? 1 : -1;
+            }
+
+            return candidate;
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

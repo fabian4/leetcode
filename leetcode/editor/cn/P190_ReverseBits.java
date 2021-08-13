@@ -69,18 +69,24 @@ package leetcode.editor.cn;
  * @author fabian
  * @date 2021-08-12 22:22:49
  */
-public class P190_ReverseBits{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P190_ReverseBits().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-public class Solution {
-    // you need treat n as an unsigned value
-    public int reverseBits(int n) {
-        
+public class P190_ReverseBits {
+    public static void main(String[] args) {
+        Solution solution = new P190_ReverseBits().new Solution();
+
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    public class Solution {
+        // you need treat n as an unsigned value
+        public int reverseBits(int n) {
+            int rev = 0;
+            for (int i = 0; i < 32 && n != 0; ++i) {
+                rev |= (n & 1) << (31 - i);
+                n >>>= 1;
+            }
+            return rev;
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

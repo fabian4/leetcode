@@ -94,7 +94,7 @@ public class P13_RomanToInteger {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int romanToInt(String s) {
-            HashMap<Character, Integer> hashMap = new HashMap<>(7) {{
+            HashMap<Character, Integer> hashMap = new HashMap<Character, Integer>(7) {{
                 put('I', 1);
                 put('V', 5);
                 put('X', 10);

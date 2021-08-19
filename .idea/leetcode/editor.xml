@@ -915,6 +915,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/P416_PartitionEqualSubsetSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/P416_PartitionEqualSubsetSum.java" />
+              <option name="questionId" value="416" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode/editor/cn/P41_FirstMissingPositive.java">
           <value>
             <LeetcodeEditor>
@@ -936,6 +944,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/P44_WildcardMatching.java" />
               <option name="questionId" value="44" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/P45_JumpGameIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/P45_JumpGameIi.java" />
+              <option name="questionId" value="45" />
             </LeetcodeEditor>
           </value>
         </entry>

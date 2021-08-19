@@ -38,8 +38,6 @@ package leetcode.editor.cn;
 
 //跳跃游戏
 
-import java.util.Arrays;
-
 /**
  * @author fabian
  * @date 2021-07-30 17:30:36

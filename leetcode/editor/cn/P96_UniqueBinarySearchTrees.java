@@ -38,7 +38,7 @@ package leetcode.editor.cn;
 public class P96_UniqueBinarySearchTrees{
 	 public static void main(String[] args) {
 	 	 Solution solution = new P96_UniqueBinarySearchTrees().new Solution();
-	 	 solution.numTrees(19);
+	 	 solution.numTrees(3);
 	 }
 	//leetcode submit region begin(Prohibit modification and deletion)
 	class Solution {

@@ -1028,6 +1028,15 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/P51_NQueens.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/P51_NQueens.md" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/P51_NQueens.java" />
+              <option name="questionId" value="51" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode/editor/cn/P53_MaximumSubarray.java">
           <value>
             <LeetcodeEditor>

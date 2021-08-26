@@ -57,6 +57,7 @@ package leetcode.editor.cn;
 
 //复原 IP 地址
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -71,7 +72,19 @@ public class P93_RestoreIpAddresses {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
+        List<String> res = new ArrayList<>();
+
         public List<String> restoreIpAddresses(String s) {
+
+        }
+
+        public void restoreIpAddresses(String s, String target, int index, int point){
+            if(point == 3){
+                res.add(target);
+                return;
+            }
+
 
         }
     }

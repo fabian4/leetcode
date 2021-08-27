@@ -85,7 +85,20 @@ public class P142_LinkedListCycleIi {
      */
     public class Solution {
         public ListNode detectCycle(ListNode head) {
-
+            ListNode p = head, q = head;
+            while (q != null && q.next != null) {
+                p = p.next;
+                q = q.next.next;
+                if (p == q) {
+                    q = head;
+                    while (p != q) {
+                        p = p.next;
+                        q = q.next;
+                    }
+                    return p;
+                }
+            }
+            return null;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

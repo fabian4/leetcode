@@ -64,17 +64,18 @@ package leetcode.editor.cn;
  * @author fabian
  * @date 2021-08-28 14:46:44
  */
-public class P287_FindTheDuplicateNumber{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P287_FindTheDuplicateNumber().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int findDuplicate(int[] nums) {
+public class P287_FindTheDuplicateNumber {
+    public static void main(String[] args) {
+        Solution solution = new P287_FindTheDuplicateNumber().new Solution();
 
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int findDuplicate(int[] nums) {
+
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

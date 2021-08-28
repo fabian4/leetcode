@@ -60,6 +60,8 @@ package leetcode.editor.cn;
 
 //寻找重复数
 
+import java.util.Arrays;
+
 /**
  * @author fabian
  * @date 2021-08-28 14:46:44
@@ -73,7 +75,13 @@ public class P287_FindTheDuplicateNumber {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int findDuplicate(int[] nums) {
-
+			Arrays.sort(nums);
+			for (int i = 1; i < nums.length; i++) {
+				if(nums[i] == nums[i-1]){
+					return nums[i];
+				}
+			}
+			return 0;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

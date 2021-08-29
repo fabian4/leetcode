@@ -814,6 +814,15 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/P238_ProductOfArrayExceptSelf.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/P238_ProductOfArrayExceptSelf.md" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/P238_ProductOfArrayExceptSelf.java" />
+              <option name="questionId" value="238" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode/editor/cn/P23_MergeKSortedLists.java">
           <value>
             <LeetcodeEditor>

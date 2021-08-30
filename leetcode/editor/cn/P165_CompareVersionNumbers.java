@@ -77,17 +77,18 @@ package leetcode.editor.cn;
  * @author fabian
  * @date 2021-08-30 22:21:24
  */
-public class P165_CompareVersionNumbers{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P165_CompareVersionNumbers().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int compareVersion(String version1, String version2) {
+public class P165_CompareVersionNumbers {
+    public static void main(String[] args) {
+        Solution solution = new P165_CompareVersionNumbers().new Solution();
 
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int compareVersion(String version1, String version2) {
+
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

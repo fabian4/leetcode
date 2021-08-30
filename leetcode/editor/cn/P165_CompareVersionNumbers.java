@@ -88,8 +88,8 @@ public class P165_CompareVersionNumbers {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int compareVersion(String version1, String version2) {
-            String[] num1 = version1.replace(".", "=").split("=");
-            String[] num2 = version2.replace(".", "=").split("=");
+            String[] num1 = version1.split("\\.");
+            String[] num2 = version2.split("\\.");
             int length = Math.max(num1.length, num2.length);
             for (int i = 0; i < length; i++) {
                 int a = 0;

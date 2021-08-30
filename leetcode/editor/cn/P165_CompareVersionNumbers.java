@@ -73,6 +73,8 @@ package leetcode.editor.cn;
 
 //比较版本号
 
+import java.util.Arrays;
+
 /**
  * @author fabian
  * @date 2021-08-30 22:21:24
@@ -80,13 +82,30 @@ package leetcode.editor.cn;
 public class P165_CompareVersionNumbers {
     public static void main(String[] args) {
         Solution solution = new P165_CompareVersionNumbers().new Solution();
-
+        System.out.println(solution.compareVersion("0.1", "1.1"));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int compareVersion(String version1, String version2) {
-
+            String[] num1 = version1.replace(".", "=").split("=");
+            String[] num2 = version2.replace(".", "=").split("=");
+            int length = Math.max(num1.length, num2.length);
+            for (int i = 0; i < length; i++) {
+                int a = 0;
+                if(i < num1.length){
+                    a = Integer.parseInt(num1[i]);
+                }
+                int b = 0;
+                if(i < num2.length){
+                    b = Integer.parseInt(num2[i]);
+                }
+                if(a == b){
+                    continue;
+                }
+                return a > b ? 1 : -1;
+            }
+            return 0;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

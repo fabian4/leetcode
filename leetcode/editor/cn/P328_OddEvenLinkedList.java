@@ -51,7 +51,23 @@ public class P328_OddEvenLinkedList {
      */
     class Solution {
         public ListNode oddEvenList(ListNode head) {
-
+            if (head == null || head.next == null) {
+                return head;
+            }
+            ListNode p = head;
+            ListNode even = head.next;
+            ListNode q = even;
+            while (q != null) {
+                if (q.next == null) {
+                    break;
+                }
+                p.next = q.next;
+                p = p.next;
+                q.next = p.next;
+                q = q.next;
+            }
+            p.next = even;
+            return head;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

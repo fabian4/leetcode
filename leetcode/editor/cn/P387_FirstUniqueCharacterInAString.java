@@ -28,13 +28,27 @@ package leetcode.editor.cn;
 public class P387_FirstUniqueCharacterInAString {
     public static void main(String[] args) {
         Solution solution = new P387_FirstUniqueCharacterInAString().new Solution();
-
+        System.out.println((char) ('a' + 3));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int firstUniqChar(String s) {
-
+            int[] table = new int[26];
+            int ans = -1;
+            for (int i = 0; i < s.length(); i++) {
+                table[s.charAt(i) - 'a']++;
+            }
+            for (int i = 0; i < 26; i++) {
+                if(table[i]==1){
+                    if(ans==-1){
+                        ans = s.indexOf((char) ('a' + i));
+                    }else {
+                        ans = Math.min(ans, s.indexOf((char) ('a' + i)));
+                    }
+                }
+            }
+            return ans;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

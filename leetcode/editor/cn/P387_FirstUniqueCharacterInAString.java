@@ -35,20 +35,15 @@ public class P387_FirstUniqueCharacterInAString {
     class Solution {
         public int firstUniqChar(String s) {
             int[] table = new int[26];
-            int ans = -1;
             for (int i = 0; i < s.length(); i++) {
                 table[s.charAt(i) - 'a']++;
             }
-            for (int i = 0; i < 26; i++) {
-                if(table[i]==1){
-                    if(ans==-1){
-                        ans = s.indexOf((char) ('a' + i));
-                    }else {
-                        ans = Math.min(ans, s.indexOf((char) ('a' + i)));
-                    }
+            for (int i = 0; i < s.length(); i++) {
+                if (table[s.charAt(i)-'a'] == 1) {
+                    return i;
                 }
             }
-            return ans;
+            return -1;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

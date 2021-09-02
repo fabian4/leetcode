@@ -1040,6 +1040,15 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/P412_FizzBuzz.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/P412_FizzBuzz.md" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/P412_FizzBuzz.java" />
+              <option name="questionId" value="412" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode/editor/cn/P416_PartitionEqualSubsetSum.java">
           <value>
             <LeetcodeEditor>

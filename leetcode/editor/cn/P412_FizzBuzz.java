@@ -36,21 +36,24 @@ package leetcode.editor.cn;
 
 //Fizz Buzz
 
+import java.util.List;
+
 /**
  * @author fabian
  * @date 2021-09-02 20:25:24
  */
-public class P412_FizzBuzz{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P412_FizzBuzz().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public List<String> fizzBuzz(int n) {
+public class P412_FizzBuzz {
+    public static void main(String[] args) {
+        Solution solution = new P412_FizzBuzz().new Solution();
 
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public List<String> fizzBuzz(int n) {
+
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

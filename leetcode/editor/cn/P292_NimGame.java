@@ -53,17 +53,18 @@ package leetcode.editor.cn;
  * @author fabian
  * @date 2021-09-05 10:24:49
  */
-public class P292_NimGame{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P292_NimGame().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean canWinNim(int n) {
+public class P292_NimGame {
+    public static void main(String[] args) {
+        Solution solution = new P292_NimGame().new Solution();
 
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean canWinNim(int n) {
+			return (n % 4 != 0);
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

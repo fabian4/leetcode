@@ -927,6 +927,7 @@
         <entry key="$PROJECT_DIR$/leetcode/editor/cn/P29_DivideTwoIntegers.java">
           <value>
             <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/P29_DivideTwoIntegers.md" />
               <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/P29_DivideTwoIntegers.java" />
               <option name="questionId" value="29" />
             </LeetcodeEditor>
@@ -1012,6 +1013,15 @@
               <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/P37_SudokuSolver.md" />
               <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/P37_SudokuSolver.java" />
               <option name="questionId" value="37" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/P384_ShuffleAnArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/P384_ShuffleAnArray.md" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/P384_ShuffleAnArray.java" />
+              <option name="questionId" value="384" />
             </LeetcodeEditor>
           </value>
         </entry>

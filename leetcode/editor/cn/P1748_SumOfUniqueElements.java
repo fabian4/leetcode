@@ -40,6 +40,7 @@ package leetcode.editor.cn;
 
 //唯一元素的和
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -47,34 +48,37 @@ import java.util.HashSet;
  * @author fabian
  * @date 2022-02-06 17:13:16
  */
-public class P1748_SumOfUniqueElements{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P1748_SumOfUniqueElements().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int sumOfUnique(int[] nums) {
-		HashMap<Integer, Boolean> map = new HashMap<>(nums.length);
-		for (int num : nums) {
-			if(map.containsKey(num)){
-				map.put(num, false);
-			}else {
-				map.put(num, true);
-			}
-		}
+public class P1748_SumOfUniqueElements {
+    public static void main(String[] args) {
+        Solution solution = new P1748_SumOfUniqueElements().new Solution();
 
-		int ans = 0;
+    }
 
-		for (int num : nums) {
-			if(map.get(num)){
-				ans += num;
-			}
-		}
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int sumOfUnique(int[] nums) {
 
-		return ans;
-	}
-}
+            HashMap<Integer, Boolean> map = new HashMap<>(nums.length);
+            for (int num : nums) {
+                if (map.containsKey(num)) {
+                    map.put(num, false);
+                } else {
+                    map.put(num, true);
+                }
+            }
+
+            int ans = 0;
+
+            for (int num : nums) {
+                if (map.get(num)) {
+                    ans += num;
+                }
+            }
+
+            return ans;
+
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

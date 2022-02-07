@@ -55,11 +55,11 @@ import java.util.List;
 public class P2_AddTwoNumbers {
     public static void main(String[] args) {
         Solution solution = new P2_AddTwoNumbers().new Solution();
-        System.out.println(ListNode.getFromArrayString("[1,2,3,4,5,6,7]").toString());
-//        System.out.println(solution.addTwoNumbers(
-//                ListNode.getFromArrayString("[9,9,9,9,9,9,9]"),
-//                ListNode.getFromArrayString("[9,9,9,9]")
-//        ).toString());
+//        System.out.println(ListNode.getFromArrayString("[1,2,3,4,5,6,7]").toString());
+        System.out.println(solution.addTwoNumbers(
+                ListNode.getFromArrayString("[9,9,9,9,9,9,9]"),
+                ListNode.getFromArrayString("[9,9,9,9]")
+        ).toString());
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 

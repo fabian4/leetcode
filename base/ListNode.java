@@ -39,8 +39,9 @@ public class ListNode {
     @Override
     public String toString() {
         ArrayList<Integer> list = new ArrayList<>();
-        while (next!=null){
-            list.add(val);
+        list.add(val);
+        while (next != null) {
+            list.add(next.val);
             next = next.next;
         }
         return list.toString();

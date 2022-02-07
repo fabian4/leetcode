@@ -101,12 +101,14 @@ public class P2_AddTwoNumbers {
             while (flag) {
                 if (last == null) {
                     p.next = new ListNode(1);
+                    flag = false;
                 } else {
-                    int sum = last.val++;
+                    int sum = last.val+1;
                     flag = sum >= 10;
                     p.next = new ListNode(sum % 10);
                     last = last.next;
                 }
+                p = p.next;
             }
 
             p.next = last;

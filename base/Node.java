@@ -1,4 +1,4 @@
-package leetcode.editor.cn.base;
+package base;
 
 /**
  * @author fabian

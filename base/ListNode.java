@@ -1,4 +1,6 @@
-package leetcode.editor.cn.base;
+package base;
+
+import java.util.ArrayList;
 
 /**
  * @author fabian
@@ -18,6 +20,30 @@ public class ListNode {
     public ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
+    }
+
+    public static ListNode getFromArrayString(String list) {
+        String[] split = list.replace("[", "").replace("]", "").split(",");
+        if (split.length == 0) {
+            return null;
+        }
+        ListNode head = new ListNode(Integer.parseInt(split[0]));
+        ListNode tail = head;
+        for (int i = 1; i < split.length; i++) {
+            tail.next = new ListNode(Integer.parseInt(split[i]));
+            tail = tail.next;
+        }
+        return head;
+    }
+
+    @Override
+    public String toString() {
+        ArrayList<Integer> list = new ArrayList<>();
+        while (next!=null){
+            list.add(val);
+            next = next.next;
+        }
+        return list.toString();
     }
 
 }

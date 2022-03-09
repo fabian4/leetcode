@@ -61,17 +61,34 @@ package leetcode.editor.cn;
  * @author fabian
  * @date 2022-03-09 09:30:23
  */
-public class P6_ZigzagConversion{
-	 public static void main(String[] args) {
-	 	 Solution solution = new P6_ZigzagConversion().new Solution();
-	 
-	 }
-	//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String convert(String s, int numRows) {
-
+public class P6_ZigzagConversion {
+    public static void main(String[] args) {
+        Solution solution = new P6_ZigzagConversion().new Solution();
+        System.out.println(solution.convert("PAYPALISHIRING", 3));
     }
-}
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public String convert(String s, int numRows) {
+            StringBuilder[] sb = new StringBuilder[numRows];
+            for (int i = 0; i < sb.length; i++) {
+                sb[i] = new StringBuilder();
+            }
+            for (int i = 0; i < s.length(); ) {
+                for (int p = 0; p < sb.length && i < s.length(); p++, i++) {
+                    sb[p].append(s.charAt(i));
+                }
+                for (int p = sb.length - 2; p > 0 && i < s.length(); p--, i++) {
+                    sb[p].append(s.charAt(i));
+                }
+            }
+            StringBuilder ans = new StringBuilder();
+            for (StringBuilder stringBuilder : sb) {
+                ans.append(stringBuilder.toString());
+            }
+            return ans.toString();
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

@@ -74,17 +74,10 @@ public class P227_BasicCalculatorIi {
                 }
                 if (!Character.isDigit(s.charAt(i)) && s.charAt(i) != ' ' || i == n - 1) {
                     switch (preSign) {
-                        case '+':
-                            stack.push(num);
-                            break;
-                        case '-':
-                            stack.push(-num);
-                            break;
-                        case '*':
-                            stack.push(stack.pop() * num);
-                            break;
-                        default:
-                            stack.push(stack.pop() / num);
+                        case '+' -> stack.push(num);
+                        case '-' -> stack.push(-num);
+                        case '*' -> stack.push(stack.pop() * num);
+                        default -> stack.push(stack.pop() / num);
                     }
                     preSign = s.charAt(i);
                     num = 0;

@@ -48,6 +48,9 @@ package leetcode.editor.cn;
 
 //基本计算器 II
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * @author fabian
  * @date 2022-08-10 11:08:20
@@ -55,13 +58,43 @@ package leetcode.editor.cn;
 public class P227_BasicCalculatorIi {
     public static void main(String[] args) {
         Solution solution = new P227_BasicCalculatorIi().new Solution();
-
+        System.out.println(solution.calculate(" 3+5 / 2 "));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int calculate(String s) {
-
+            Deque<Integer> stack = new ArrayDeque<>();
+            char preSign = '+';
+            int num = 0;
+            int n = s.length();
+            for (int i = 0; i < n; ++i) {
+                if (Character.isDigit(s.charAt(i))) {
+                    num = num * 10 + s.charAt(i) - '0';
+                }
+                if (!Character.isDigit(s.charAt(i)) && s.charAt(i) != ' ' || i == n - 1) {
+                    switch (preSign) {
+                        case '+':
+                            stack.push(num);
+                            break;
+                        case '-':
+                            stack.push(-num);
+                            break;
+                        case '*':
+                            stack.push(stack.pop() * num);
+                            break;
+                        default:
+                            stack.push(stack.pop() / num);
+                    }
+                    preSign = s.charAt(i);
+                    num = 0;
+                }
+            }
+            int ans = 0;
+            while (!stack.isEmpty()) {
+                ans += stack.pop();
+            }
+            return ans;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)

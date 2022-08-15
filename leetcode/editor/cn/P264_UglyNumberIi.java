@@ -46,7 +46,6 @@ import java.util.Set;
 public class P264_UglyNumberIi {
     public static void main(String[] args) {
         Solution solution = new P264_UglyNumberIi().new Solution();
-        System.out.println(solution.nthUglyNumber(50));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -67,7 +66,6 @@ public class P264_UglyNumberIi {
                 if (dp[i] == num5) {
                     p5++;
                 }
-                System.out.println(Arrays.toString(dp));
             }
             return dp[n];
         }

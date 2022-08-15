@@ -35,6 +35,10 @@ package leetcode.editor.cn;
 
 //丑数 II
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author fabian
  * @date 2022-08-15 15:52:05
@@ -42,13 +46,30 @@ package leetcode.editor.cn;
 public class P264_UglyNumberIi {
     public static void main(String[] args) {
         Solution solution = new P264_UglyNumberIi().new Solution();
-
+        System.out.println(solution.nthUglyNumber(50));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int nthUglyNumber(int n) {
-
+            int[] dp = new int[n + 1];
+            dp[1] = 1;
+            int p2 = 1, p3 = 1, p5 = 1;
+            for (int i = 2; i <= n; i++) {
+                int num2 = dp[p2] * 2, num3 = dp[p3] * 3, num5 = dp[p5] * 5;
+                dp[i] = Math.min(Math.min(num2, num3), num5);
+                if (dp[i] == num2) {
+                    p2++;
+                }
+                if (dp[i] == num3) {
+                    p3++;
+                }
+                if (dp[i] == num5) {
+                    p5++;
+                }
+                System.out.println(Arrays.toString(dp));
+            }
+            return dp[n];
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

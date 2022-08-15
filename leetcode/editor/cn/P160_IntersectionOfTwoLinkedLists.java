@@ -114,7 +114,31 @@ import base.ListNode;
  */
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        
+        ListNode p = headA;
+        boolean f1 = false;
+        ListNode q = headB;
+        boolean f2 = false;
+        while (p!=q){
+            if(p.next==null){
+                if(f1){
+                    return null;
+                }
+                p = headB;
+                f1 = true;
+            }else {
+                p = p.next;
+            }
+            if(q.next==null){
+                if(f2){
+                    return null;
+                }
+                q = headA;
+                f2 = true;
+            }else {
+                q = q.next;
+            }
+        }
+        return p;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

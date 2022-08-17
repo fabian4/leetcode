@@ -36,10 +36,7 @@ package leetcode.editor.cn;
 
 import base.TreeNode;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author fabian
@@ -69,46 +66,24 @@ public class P1302_DeepestLeavesSum {
      */
     class Solution {
         public int deepestLeavesSum(TreeNode root) {
-            List<TreeNode> a = new ArrayList<>();
-            List<TreeNode> b = new ArrayList<>();
-            a.add(root);
-            while (true) {
-                if (b.size() == 0) {
-                    for (TreeNode temp : a) {
-                        if (temp.left != null) {
-                            b.add(temp.left);
-                        }
-                        if (temp.right != null) {
-                            b.add(temp.right);
-                        }
+            int sum = 0;
+            Queue<TreeNode> queue = new ArrayDeque<TreeNode>();
+            queue.offer(root);
+            while (!queue.isEmpty()) {
+                sum = 0;
+                int size = queue.size();
+                for (int i = 0; i < size; i++) {
+                    TreeNode node = queue.poll();
+                    sum += node.val;
+                    if (node.left != null) {
+                        queue.offer(node.left);
                     }
-                    if(b.size() == 0){
-                        int sum = 0;
-                        for (TreeNode temp : a) {
-                            sum += temp.val;
-                        }
-                        return sum;
+                    if (node.right != null) {
+                        queue.offer(node.right);
                     }
-                    a.clear();
-                } else if (a.size() == 0) {
-                    for (TreeNode temp : b) {
-                        if (temp.left != null) {
-                            a.add(temp.left);
-                        }
-                        if (temp.right != null) {
-                            a.add(temp.right);
-                        }
-                    }
-                    if(a.size() == 0){
-                        int sum = 0;
-                        for (TreeNode temp : b) {
-                            sum += temp.val;
-                        }
-                        return sum;
-                    }
-                    b.clear();
                 }
             }
+            return sum;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

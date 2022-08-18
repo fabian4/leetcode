@@ -40,6 +40,9 @@ package leetcode.editor.cn;
 
 //最大相等频率
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author fabian
  * @date 2022-08-18 10:54:43

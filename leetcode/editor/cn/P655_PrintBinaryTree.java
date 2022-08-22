@@ -55,6 +55,9 @@ package leetcode.editor.cn;
 
 import base.TreeNode;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 /**
@@ -85,7 +88,33 @@ public class P655_PrintBinaryTree {
      */
     class Solution {
         public List<List<String>> printTree(TreeNode root) {
+            if (root == null) {
+                return null;
+            }
+            int height = getHeight(root);
+            List<List<String>> ans = new ArrayList<>(height + 1);
+            Deque<TreeNode> stack = new ArrayDeque<>();
+            stack.push(root);
+            while (!stack.isEmpty()) {
+                int size = stack.size();
+                for (int i = 0; i < size; i++) {
+                    TreeNode temp = stack.pop();
+                    if (temp.left != null) {
+                        stack.push(temp.left);
+                    }
+                    if (temp.right != null) {
+                        stack.push(temp.right);
+                    }
+                }
+            }
+            return ans;
+        }
 
+        public int getHeight(TreeNode root) {
+            if (root == null) {
+                return 0;
+            }
+            return 1 + Math.max(getHeight(root.left), getHeight(root.right));
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -91,9 +91,9 @@ public class P655_PrintBinaryTree {
             int height = calDepth(root);
             int m = height + 1;
             int n = (1 << (height + 1)) - 1;
-            List<List<String>> res = new ArrayList<List<String>>();
+            List<List<String>> res = new ArrayList<>();
             for (int i = 0; i < m; i++) {
-                List<String> row = new ArrayList<String>();
+                List<String> row = new ArrayList<>();
                 for (int j = 0; j < n; j++) {
                     row.add("");
                 }

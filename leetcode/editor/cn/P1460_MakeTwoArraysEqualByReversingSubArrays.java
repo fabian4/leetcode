@@ -50,6 +50,8 @@ package leetcode.editor.cn;
 
 //通过翻转子数组使两个数组相等
 
+import java.util.Arrays;
+
 /**
  * @author fabian
  * @date 2022-08-24 10:47:45
@@ -63,7 +65,17 @@ public class P1460_MakeTwoArraysEqualByReversingSubArrays {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean canBeEqual(int[] target, int[] arr) {
-
+            if (target.length != arr.length) {
+                return false;
+            }
+            Arrays.sort(target);
+            Arrays.sort(arr);
+            for (int i = 0; i < target.length; i++) {
+                if (target[i] != arr[i]) {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -94,7 +94,18 @@ public class P998_MaximumBinaryTreeIi {
      */
     class Solution {
         public TreeNode insertIntoMaxTree(TreeNode root, int val) {
-
+            if (root == null) {
+                return new TreeNode(val);
+            }
+            //找到大于的节点
+            if (root.val < val) {
+                TreeNode treeNode = new TreeNode(val);
+                treeNode.left = root;
+                return treeNode;
+            }
+            //遍历右节点
+            root.right = insertIntoMaxTree(root.right, val);
+            return root;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

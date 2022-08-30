@@ -53,6 +53,8 @@ package leetcode.editor.cn;
 
 import base.TreeNode;
 
+import java.util.Arrays;
+
 /**
  * @author fabian
  * @date 2022-08-30 10:38:24
@@ -81,7 +83,19 @@ public class P654_MaximumBinaryTree {
      */
     class Solution {
         public TreeNode constructMaximumBinaryTree(int[] nums) {
-
+            if (nums.length <= 0) {
+                return null;
+            }
+            int index = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[index] < nums[i]) {
+                    index = i;
+                }
+            }
+            TreeNode root = new TreeNode(nums[index]);
+            root.left = constructMaximumBinaryTree(Arrays.copyOf(nums, index));
+            root.right = constructMaximumBinaryTree(Arrays.copyOfRange(nums, index + 1, nums.length));
+            return root;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

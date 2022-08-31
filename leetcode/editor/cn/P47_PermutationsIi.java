@@ -50,7 +50,7 @@ public class P47_PermutationsIi {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        public List<List<Integer>> permute(int[] nums) {
+        public List<List<Integer>> permuteUnique(int[] nums) {
             List<List<Integer>> ans = new ArrayList<>();
             boolean[] flag = new boolean[nums.length];
             backTrace(nums, flag, ans, new ArrayList<>());
@@ -59,7 +59,9 @@ public class P47_PermutationsIi {
 
         void backTrace(int[] nums, boolean[] flag, List<List<Integer>> ans, List<Integer> output) {
             if (output.size() == nums.length) {
-                ans.add(new ArrayList<>(output));
+                if(!ans.contains(output)){
+                    ans.add(new ArrayList<>(output));
+                }
                 return;
             }
             for (int i = 0; i < nums.length; i++) {

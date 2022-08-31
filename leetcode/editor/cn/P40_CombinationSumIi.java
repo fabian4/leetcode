@@ -48,7 +48,6 @@ package leetcode.editor.cn;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author fabian
@@ -57,7 +56,7 @@ import java.util.stream.Collectors;
 public class P40_CombinationSumIi {
     public static void main(String[] args) {
         Solution solution = new P40_CombinationSumIi().new Solution();
-        solution.combinationSum2(new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, 30);
+        solution.combinationSum2(new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, 30);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -74,7 +73,7 @@ public class P40_CombinationSumIi {
             if (target == 0) {
                 List<Integer> solution = new ArrayList<>(list);
                 Collections.sort(solution);
-                if(!ans.contains(solution)){
+                if (!ans.contains(solution)) {
                     ans.add(solution);
                 }
                 return;
@@ -88,6 +87,9 @@ public class P40_CombinationSumIi {
             }
             list.add(candidates[index]);
             backTrace(candidates, index + 1, list, target - candidates[index]);
+            while (index + 1 < candidates.length && list.get(list.size() - 1) == candidates[index + 1]) {
+                index++;
+            }
             list.remove(list.size() - 1);
             backTrace(candidates, index + 1, list, target);
         }

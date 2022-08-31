@@ -41,27 +41,57 @@
 // Related Topics 数组 回溯 👍 1091 👎 0
 
 
-  package leetcode.editor.cn;
+package leetcode.editor.cn;
 
-  //组合总和 II
+//组合总和 II
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
-  * @author fabian
-  * @date 2022-08-31 14:39:48
-  */
-  public class P40_CombinationSumIi{
-  public static void main(String[] args) {
-  Solution solution = new P40_CombinationSumIi().new Solution();
-
-}
-  //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-
+ * @author fabian
+ * @date 2022-08-31 14:39:48
+ */
+public class P40_CombinationSumIi {
+    public static void main(String[] args) {
+        Solution solution = new P40_CombinationSumIi().new Solution();
+        solution.combinationSum2(new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, 30);
     }
-}
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+
+        List<List<Integer>> ans = new ArrayList<>();
+
+        public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+            backTrace(candidates, 0, new ArrayList<>(), target);
+            return ans;
+        }
+
+        void backTrace(int[] candidates, int index, List<Integer> list, int target) {
+            if (target == 0) {
+                List<Integer> solution = new ArrayList<>(list);
+                Collections.sort(solution);
+                if(!ans.contains(solution)){
+                    ans.add(solution);
+                }
+                return;
+            }
+            if (index >= candidates.length) {
+                return;
+            }
+            if (candidates[index] > target) {
+                backTrace(candidates, index + 1, list, target);
+                return;
+            }
+            list.add(candidates[index]);
+            backTrace(candidates, index + 1, list, target - candidates[index]);
+            list.remove(list.size() - 1);
+            backTrace(candidates, index + 1, list, target);
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}

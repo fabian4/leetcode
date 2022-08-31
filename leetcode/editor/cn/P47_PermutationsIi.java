@@ -49,9 +49,9 @@ public class P47_PermutationsIi {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        public List<List<Integer>> permuteUnique(int[] nums) {
-
-        }
+//        public List<List<Integer>> permuteUnique(int[] nums) {
+//
+//        }
     }
 //leetcode submit region end(Prohibit modification and deletion)
 

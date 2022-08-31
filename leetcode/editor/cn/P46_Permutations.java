@@ -36,25 +36,50 @@
 // Related Topics 数组 回溯 👍 2200 👎 0
 
 
-  package leetcode.editor.cn;
+package leetcode.editor.cn;
 
-  //全排列
+//全排列
 
-  /**
-  * @author fabian
-  * @date 2022-08-31 17:06:42
-  */
-  public class P46_Permutations{
-  public static void main(String[] args) {
-  Solution solution = new P46_Permutations().new Solution();
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-}
-  //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public List<List<Integer>> permute(int[] nums) {
-
+/**
+ * @author fabian
+ * @date 2022-08-31 17:06:42
+ */
+public class P46_Permutations {
+    public static void main(String[] args) {
+        Solution solution = new P46_Permutations().new Solution();
+        boolean[] flag = new boolean[8];
+        System.out.println(Arrays.toString(flag));
     }
-}
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public List<List<Integer>> permute(int[] nums) {
+            List<List<Integer>> ans = new ArrayList<>();
+            boolean[] flag = new boolean[nums.length];
+            backTrace(nums, flag, ans, new ArrayList<>());
+            return ans;
+        }
+
+        void backTrace(int[] nums, boolean[] flag, List<List<Integer>> ans, List<Integer> output) {
+            if (output.size() == nums.length) {
+                ans.add(new ArrayList<>(output));
+            }
+            for (int i = 0; i < nums.length; i++) {
+                if (!flag[i]) {
+                    output.add(nums[i]);
+                    flag[i] = true;
+                    backTrace(nums, flag, ans, output);
+                    flag[i] = false;
+                    output.remove(output.size() - 1);
+                }
+            }
+
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}

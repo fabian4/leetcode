@@ -59,6 +59,9 @@ public class P46_Permutations {
     class Solution {
         public List<List<Integer>> permute(int[] nums) {
             List<List<Integer>> ans = new ArrayList<>();
+            if (nums.length == 0) {
+                return ans;
+            }
             boolean[] flag = new boolean[nums.length];
             backTrace(nums, flag, ans, new ArrayList<>());
             return ans;

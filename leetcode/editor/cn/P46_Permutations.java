@@ -67,6 +67,7 @@ public class P46_Permutations {
         void backTrace(int[] nums, boolean[] flag, List<List<Integer>> ans, List<Integer> output) {
             if (output.size() == nums.length) {
                 ans.add(new ArrayList<>(output));
+                return;
             }
             for (int i = 0; i < nums.length; i++) {
                 if (!flag[i]) {

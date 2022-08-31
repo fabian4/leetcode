@@ -35,6 +35,7 @@ package leetcode.editor.cn;
 
 //全排列 II
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -49,9 +50,29 @@ public class P47_PermutationsIi {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-//        public List<List<Integer>> permuteUnique(int[] nums) {
-//
-//        }
+        public List<List<Integer>> permute(int[] nums) {
+            List<List<Integer>> ans = new ArrayList<>();
+            boolean[] flag = new boolean[nums.length];
+            backTrace(nums, flag, ans, new ArrayList<>());
+            return ans;
+        }
+
+        void backTrace(int[] nums, boolean[] flag, List<List<Integer>> ans, List<Integer> output) {
+            if (output.size() == nums.length) {
+                ans.add(new ArrayList<>(output));
+                return;
+            }
+            for (int i = 0; i < nums.length; i++) {
+                if (!flag[i]) {
+                    output.add(nums[i]);
+                    flag[i] = true;
+                    backTrace(nums, flag, ans, output);
+                    flag[i] = false;
+                    output.remove(output.size() - 1);
+                }
+            }
+
+        }
     }
 //leetcode submit region end(Prohibit modification and deletion)
 

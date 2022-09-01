@@ -60,7 +60,19 @@ public class P1475_FinalPricesWithASpecialDiscountInAShop {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] finalPrices(int[] prices) {
-
+            int[] ans = new int[prices.length];
+            for (int i = 0; i < prices.length; i++) {
+                int index = i + 1;
+                while (index < prices.length && prices[i] < prices[index]){
+                    index++;
+                }
+                if (index < prices.length) {
+                    ans[i] = prices[i] - prices[index];
+                } else {
+                    ans[i] = prices[i];
+                }
+            }
+            return ans;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -48,7 +48,7 @@ package leetcode.editor.cn;
 
 import base.TreeNode;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * @author fabian
@@ -77,8 +77,32 @@ public class P652_FindDuplicateSubtrees {
      * }
      */
     class Solution {
-        public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        Map<String, TreeNode> seen = new HashMap<>();
+        Set<TreeNode> repeat = new HashSet<>();
 
+        public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+            dfs(root);
+            return new ArrayList<>(repeat);
+        }
+
+        public String dfs(TreeNode node) {
+            if (node == null) {
+                return "";
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.append(node.val);
+            sb.append("(");
+            sb.append(dfs(node.left));
+            sb.append(")(");
+            sb.append(dfs(node.right));
+            sb.append(")");
+            String serial = sb.toString();
+            if (seen.containsKey(serial)) {
+                repeat.add(seen.get(serial));
+            } else {
+                seen.put(serial, node);
+            }
+            return serial;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

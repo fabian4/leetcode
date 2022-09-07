@@ -53,25 +53,26 @@
 // Related Topics 字符串 👍 38 👎 0
 
 
-  package leetcode.editor.cn;
+package leetcode.editor.cn;
 
-  //重新排列单词间的空格
+//重新排列单词间的空格
 
-  /**
-  * @author fabian
-  * @date 2022-09-07 10:49:34
-  */
-  public class P1592_RearrangeSpacesBetweenWords{
-  public static void main(String[] args) {
-  Solution solution = new P1592_RearrangeSpacesBetweenWords().new Solution();
-
-}
-  //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String reorderSpaces(String text) {
+/**
+ * @author fabian
+ * @date 2022-09-07 10:49:34
+ */
+public class P1592_RearrangeSpacesBetweenWords {
+    public static void main(String[] args) {
+        Solution solution = new P1592_RearrangeSpacesBetweenWords().new Solution();
 
     }
-}
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public String reorderSpaces(String text) {
+
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}

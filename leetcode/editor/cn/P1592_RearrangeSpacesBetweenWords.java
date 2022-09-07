@@ -57,6 +57,8 @@ package leetcode.editor.cn;
 
 //重新排列单词间的空格
 
+import java.util.Arrays;
+
 /**
  * @author fabian
  * @date 2022-09-07 10:49:34
@@ -64,13 +66,35 @@ package leetcode.editor.cn;
 public class P1592_RearrangeSpacesBetweenWords {
     public static void main(String[] args) {
         Solution solution = new P1592_RearrangeSpacesBetweenWords().new Solution();
-
+        System.out.println("  cwac ".trim());
+        System.out.println(Arrays.toString("  cwac   scac dsc   sdccd   sdcd  ".trim().split("\\s+")));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public String reorderSpaces(String text) {
-
+            int length = text.length();
+            String[] words = text.trim().split("\\s+");
+            int cntSpace = length;
+            for (String word : words) {
+                cntSpace -= word.length();
+            }
+            StringBuilder sb = new StringBuilder();
+            if (words.length == 1) {
+                sb.append(words[0]);
+                sb.append(" ".repeat(Math.max(0, cntSpace)));
+                return sb.toString();
+            }
+            int perSpace = cntSpace / (words.length - 1);
+            int restSpace = cntSpace % (words.length - 1);
+            for (int i = 0; i < words.length; i++) {
+                if (i > 0) {
+                    sb.append(" ".repeat(Math.max(0, perSpace)));
+                }
+                sb.append(words[i]);
+            }
+            sb.append(" ".repeat(Math.max(0, restSpace)));
+            return sb.toString();
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

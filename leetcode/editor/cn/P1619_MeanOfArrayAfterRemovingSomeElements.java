@@ -77,8 +77,11 @@ public class P1619_MeanOfArrayAfterRemovingSomeElements {
     class Solution {
         public double trimMean(int[] arr) {
             Arrays.sort(arr);
-            int[] ans = Arrays.copyOfRange(arr, (int)(arr.length*0.05), (int)(arr.length*0.95));
-            return Arrays.stream(ans).sum() / (double) ans.length;
+            int sum = 0;
+            for (int i = arr.length / 20; i < 19 * arr.length / 20; i++) {
+                sum += arr[i];
+            }
+            return sum / (arr.length * 0.9);
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

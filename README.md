@@ -5,6 +5,8 @@
 |[![Leetcode Stats](https://leetcode.card.workers.dev/?username=fabianbao&border=0&site=cn)](https://leetcode-cn.com/u/fabianbao/)|[![fabian's LeetCode Stats](https://leetcode-stats.vercel.app/api?username=fabian&theme=Light)](https://leetcode-cn.com/u/fabianbao/)|
 | ------------- | ------------- | -->
 
-## 2021
-![image](https://user-images.githubusercontent.com/60428924/152670787-7eb1ef76-8b29-469d-b457-843502965690.png)
+## 2022
+![image](https://user-images.githubusercontent.com/60428924/216034888-f8b4b00e-da4c-486c-9872-e4a18b9c6325.png)
 
+## 2021
+![image](https://user-images.githubusercontent.com/60428924/216035023-02273762-0103-4d59-affc-23d4d0c18d1d.png)

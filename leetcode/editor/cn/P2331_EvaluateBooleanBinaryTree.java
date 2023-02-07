@@ -87,12 +87,16 @@ public class P2331_EvaluateBooleanBinaryTree {
      */
     class Solution {
         public boolean evaluateTree(TreeNode root) {
-            return switch (root.val) {
-                case 1 -> true;
-                case 2 -> evaluateTree(root.left) || evaluateTree(root.right);
-                case 3 -> evaluateTree(root.left) && evaluateTree(root.right);
-                default -> false;
-            };
+            switch (root.val) {
+                case 1:
+                    return true;
+                case 2:
+                    return evaluateTree(root.left) || evaluateTree(root.right);
+                case 3:
+                    return evaluateTree(root.left) && evaluateTree(root.right);
+                default:
+                    return false;
+            }
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -65,20 +65,23 @@ public class P20_ValidParentheses {
             Stack<Character> stack = new Stack<Character>();
             for (int i = 0; i < s.length(); i++) {
                 switch (s.charAt(i)) {
-                    case '(' -> stack.push('(');
-                    case ')' -> {
+                    case '(':
+                        stack.push('(');
+                    case ')': {
                         if (stack.isEmpty() || stack.pop() != '(') {
                             return false;
                         }
                     }
-                    case '[' -> stack.push('[');
-                    case ']' -> {
+                    case '[':
+                        stack.push('[');
+                    case ']': {
                         if (stack.isEmpty() || stack.pop() != '[') {
                             return false;
                         }
                     }
-                    case '{' -> stack.push('{');
-                    case '}' -> {
+                    case '{':
+                        stack.push('{');
+                    case '}': {
                         if (stack.isEmpty() || stack.pop() != '{') {
                             return false;
                         }

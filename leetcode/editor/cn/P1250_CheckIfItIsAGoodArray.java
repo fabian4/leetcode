@@ -39,24 +39,24 @@
 
 package leetcode.editor.cn;
 
-  //检查「好数组」
+//检查「好数组」
 
 /**
  * @author fabian
  * @date 2023-02-15 17:57:18
-*/
-public class P1250_CheckIfItIsAGoodArray{
-    
+ */
+public class P1250_CheckIfItIsAGoodArray {
+
     public static void main(String[] args) {
         Solution solution = new P1250_CheckIfItIsAGoodArray().new Solution();
     }
-    
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isGoodArray(int[] nums) {
 
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean isGoodArray(int[] nums) {
+
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 

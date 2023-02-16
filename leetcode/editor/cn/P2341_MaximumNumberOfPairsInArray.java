@@ -52,6 +52,8 @@ package leetcode.editor.cn;
 //数组能形成多少数对
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author fabian
@@ -66,18 +68,17 @@ public class P2341_MaximumNumberOfPairsInArray {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] numberOfPairs(int[] nums) {
-            Arrays.sort(nums);
-            int[] flag = new int[nums.length];
-            Arrays.fill(flag, 0);
-            int pair = 0;
-            for (int i = 1; i < nums.length; i++) {
-                if (flag[i - 1] == 0 && nums[i - 1] == nums[i]) {
-                    pair++;
-                    flag[i - 1] = 1;
-                    flag[i] = 1;
+            Set<Integer> set = new HashSet<>();
+            int count = 0;
+            for (int i : nums) {
+                if (set.contains(i)) {
+                    set.remove(i);
+                    count++;
+                } else {
+                    set.add(i);
                 }
             }
-            return new int[]{pair, nums.length - pair * 2};
+            return new int[]{count, set.size()};
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

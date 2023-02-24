@@ -46,18 +46,18 @@ package leetcode.editor.cn;
  * @author fabian
  * @date 2023-02-24 23:36:01
  */
-public class P2357_MakeArrayZeroBySubtractingEqualAmounts{
-    
+public class P2357_MakeArrayZeroBySubtractingEqualAmounts {
+
     public static void main(String[] args) {
         Solution solution = new P2357_MakeArrayZeroBySubtractingEqualAmounts().new Solution();
     }
-    
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int minimumOperations(int[] nums) {
 
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int minimumOperations(int[] nums) {
+
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 

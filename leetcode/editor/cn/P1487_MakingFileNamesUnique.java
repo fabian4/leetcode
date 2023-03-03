@@ -71,16 +71,16 @@ import java.util.Map;
 
 /**
  * @author fabian
- * @date 2023-03-03 18:29:38
+ * @date 2023-03-03 18:33:02
  */
-public class P1487_MakingFileNamesUnique {
-
+public class P1487_MakingFileNamesUnique{
+    
     public static void main(String[] args) {
         Solution solution = new P1487_MakingFileNamesUnique().new Solution();
     }
-
+    
     //leetcode submit region begin(Prohibit modification and deletion)
-    class Solution {
+class Solution {
         public String[] getFolderNames(String[] names) {
             Map<String, Integer> index = new HashMap<String, Integer>();
             int n = names.length;
@@ -106,8 +106,8 @@ public class P1487_MakingFileNamesUnique {
         public String addSuffix(String name, int k) {
             return name + "(" + k + ")";
         }
-    }
-//leetcode submit region end(Prohibit modification and deletion
+}
+//leetcode submit region end(Prohibit modification and deletion)
 
 
 }
